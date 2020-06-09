@@ -1,0 +1,9 @@
+api_postItem:
+  path: /v1/cart/item
+  methods: POST
+  controller: App\Api\Infrastructure\Ui\Http\Controllers\ApiController::postItem
+
+api_getCart:
+  path: /v1/cart/{cart_id}
+  methods: GET
+  controller: App\Api\Infrastructure\Ui\Http\Controllers\ApiController::getCart

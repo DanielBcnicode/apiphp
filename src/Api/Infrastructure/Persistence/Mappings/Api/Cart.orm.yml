@@ -1,0 +1,23 @@
+App\Api\Domain\Entities\Cart:
+  type: entity
+  repositoryClass: App\Api\Infrastructure\Persistence\Doctrine\Repositories\CartDoctrineRepository.php
+  table: carts
+
+  id:
+    id:
+      type: uuid
+      generator:
+        strategy: NONE
+      customIdGenerator:
+        class: Ramsey\Uuid\Doctrine\UuidGenerator
+
+  fields:
+    createdAt:
+      type: datetime
+      name: created_at
+
+  oneToMany:
+    items:
+      targetEntity: App\Api\Domain\Entities\Item
+      mappedBy: cart
+      cascade: ["persist"]

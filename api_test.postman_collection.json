@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "953c7401-1d58-4e63-8bcc-47070d61a327",
+		"name": "Api_Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PostItem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cart_id\": \"1751c582-b8cf-44a2-80ae-735d486b7382\",\n\t\"id\": \"f6e2a013-1b83-4ccd-be41-69ed71a02ce8\",\n\t\"name\": \"Item test 3\",\n\t\"description\": \"The first item added to the cart.\",\n\t\"price\": 120.5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1/cart/item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"cart",
+						"item"
+					]
+				},
+				"description": "Add a item to a cart\n"
+			},
+			"response": []
+		},
+		{
+			"name": "GetCart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/v1/cart/1751c582-b8cf-44a2-80ae-735d486b7382",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"cart",
+						"1751c582-b8cf-44a2-80ae-735d486b7382"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

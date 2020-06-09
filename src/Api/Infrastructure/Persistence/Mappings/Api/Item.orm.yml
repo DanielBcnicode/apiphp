@@ -1,0 +1,33 @@
+App\Api\Domain\Entities\Item:
+  type: entity
+  repositoryClass: App\Api\Infrastructure\Persistence\Doctrine\Repositories\ItemDoctrineRepository.php
+  table: items
+
+  id:
+    id:
+      type: uuid
+      generator:
+        strategy: NONE
+      customIdGenerator:
+        class: Ramsey\Uuid\Doctrine\UuidGenerator
+
+  fields:
+    price:
+      type: float
+    name:
+      type: string
+    description:
+      type: string
+    createdAt:
+      type: datetime
+      name: created_at
+
+  manyToOne:
+    cart:
+        targetEntity: App\Api\Domain\Entities\Cart
+        inversedBy: items
+        joinColumn:
+          nullable: false
+          name: cart_id
+          referencedColumnName: id
+        cascade: ["persist"]
