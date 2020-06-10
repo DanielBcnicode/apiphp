@@ -1,9 +1,9 @@
 api_postItem:
   path: /v1/cart/item
   methods: POST
-  controller: App\Api\Infrastructure\Ui\Http\Controllers\ApiController::postItem
+  controller: App\Api\Infrastructure\Ui\Http\Controllers\PostItem::__invoke
 
 api_getCart:
   path: /v1/cart/{cart_id}
   methods: GET
-  controller: App\Api\Infrastructure\Ui\Http\Controllers\ApiController::getCart
+  controller: App\Api\Infrastructure\Ui\Http\Controllers\GetCart::__invoke

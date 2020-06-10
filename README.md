@@ -14,7 +14,8 @@ docker-compose exec php-fpm bin/phpunit
 
 ```
 
-**To run the test you must execute :
+**To run the test you must execute :**
+
 ```
 docker-compose exec php-fpm bin/phpunit
 ```

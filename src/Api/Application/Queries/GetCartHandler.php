@@ -6,7 +6,7 @@ namespace App\Api\Application\Queries;
 
 use App\Api\Domain\Entities\Cart;
 use App\Api\Domain\Entities\Item;
-use App\Api\Domain\Exceptions\ItemNotExistException;
+use App\Api\Domain\Exceptions\ItemNotExist;
 use App\Api\Domain\Repositories\CartRepository;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -21,7 +21,7 @@ class GetCartHandler
     }
 
     /**
-     * @throws ItemNotExistException
+     * @throws ItemNotExist
      */
     public function __invoke(GetCartQuery $query)
     {

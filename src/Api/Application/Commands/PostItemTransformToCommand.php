@@ -6,6 +6,9 @@ use App\Api\Domain\Exceptions\ItemParameterNotFound;
 
 class PostItemTransformToCommand
 {
+    /**
+     * @throws ItemParameterNotFound
+     */
     static function transform(array $data): PostItemCommand
     {
         $cartId = key_exists('cart_id', $data) ? $data['cart_id'] : null;
