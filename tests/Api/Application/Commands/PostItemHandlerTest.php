@@ -19,7 +19,6 @@ class PostItemHandlerTest extends TestCase
 
     protected function setUp()
     {
-        parent::setUp();
         $this->itemRespository = $this->getMockBuilder(ItemRepository::class)
             ->disableOriginalConstructor()
             ->getMockForAbstractClass();

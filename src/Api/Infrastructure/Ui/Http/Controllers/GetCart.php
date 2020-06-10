@@ -20,7 +20,7 @@ class GetCart extends AbstractController
         if (!Uuid::isValid($request->get('cart_id'))) {
             return new JsonResponse([], response::HTTP_BAD_REQUEST);
         }
-        $request = new GetCartQuery(Uuid::fromString($request->get('cart_id')));
+        $request = new GetCartQuery($request->get('cart_id'));
         $envelope = $this->dispatchMessage($request);
         /** @var GetCartResponse $response */
         $response = $envelope->last(HandledStamp::class)->getResult();

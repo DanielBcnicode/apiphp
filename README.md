@@ -24,6 +24,8 @@ docker-compose exec php-fpm bin/phpunit
 API with 2 endpoints:
 You can use Postman to test, there is `api_test.postman_collection.json` with the collection of calls.
 
+**Note: all the ID's must have uuid format.**
+
 ## Add some Item to a Cart
 Add a item to a cart, if the cart doesn't exist it will be created.
 ```

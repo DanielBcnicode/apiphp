@@ -8,6 +8,7 @@ use App\Api\Domain\Entities\Cart;
 use App\Api\Domain\Entities\Item;
 use App\Api\Domain\Exceptions\ItemNotExist;
 use App\Api\Domain\Repositories\CartRepository;
+use Ramsey\Uuid\Uuid;
 use Symfony\Component\HttpFoundation\Response;
 
 class GetCartHandler
@@ -25,7 +26,8 @@ class GetCartHandler
      */
     public function __invoke(GetCartQuery $query)
     {
-        $cart = $this->cartRepository->findById($query->cartId());
+        $cartId = Uuid::fromString($query->cartId());
+        $cart = $this->cartRepository->findById($cartId);
         if (null === $cart) {
             return new GetCartResponse([], Response::HTTP_NOT_FOUND);
         }

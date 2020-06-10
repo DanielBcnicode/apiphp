@@ -2,18 +2,23 @@
 
 namespace App\Api\Application\Queries;
 
+use App\Api\Domain\Exceptions\WrongParameter;
 use Ramsey\Uuid\Uuid;
 
 class GetCartQuery
 {
-    private Uuid $cartId;
+    private string $cartId;
 
-    public function __construct(Uuid $cartId)
+    public function __construct(string $cartId)
     {
+        if (!Uuid::isValid($cartId)) {
+            throw new WrongParameter("The Cart Id must be a valid uuid.");
+        }
+
         $this->cartId = $cartId;
     }
 
-    public function cartId(): Uuid
+    public function cartId(): string
     {
         return $this->cartId;
     }
